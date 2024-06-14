@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '../img/analyticsLogo.png';
+import ThemeToggler from '@/components/ThemeToggler';
 import { Avatar, AvatarImage, AvatarFallback } from '@/components/ui/avatar';
 import {
   DropdownMenu,
@@ -17,25 +18,28 @@ const Navbar = () => {
       <Link href='/'>
         <Image src={logo} alt='AnalyticsPress' width={40} />
       </Link>
-      <DropdownMenu>
-        <DropdownMenuTrigger className='focus:outline-none'>
-          {' '}
-          <Avatar>
-            <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
-            <AvatarFallback className='text-black'>BT</AvatarFallback>
-          </Avatar>
-        </DropdownMenuTrigger>
-        <DropdownMenuContent>
-          <DropdownMenuLabel>My Account</DropdownMenuLabel>
-          <DropdownMenuSeparator />
-          <DropdownMenuItem>
-            <Link href='/profile'>Profile</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href='/auth'>Logout</Link>
-          </DropdownMenuItem>
-        </DropdownMenuContent>
-      </DropdownMenu>
+      <div className='flex items-center'>
+        <ThemeToggler />
+        <DropdownMenu>
+          <DropdownMenuTrigger className='focus:outline-none'>
+            {' '}
+            <Avatar>
+              <AvatarImage src='https://github.com/shadcn.png' alt='@shadcn' />
+              <AvatarFallback className='text-black'>BT</AvatarFallback>
+            </Avatar>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>My Account</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            <DropdownMenuItem>
+              <Link href='/profile'>Profile</Link>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <Link href='/auth'>Logout</Link>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
     </div>
   );
 };
