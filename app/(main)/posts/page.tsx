@@ -1,5 +1,13 @@
+import PostsTable from '@/components/posts/PostsTable';
+import BackButton from '@/components/BackButton';
+
 const PostsPage = () => {
-  return <div>Posts</div>;
+  return (
+    <>
+      <BackButton text='Go Back' link='/' />
+      <PostsTable />
+    </>
+  );
 };
 
 export default PostsPage;
