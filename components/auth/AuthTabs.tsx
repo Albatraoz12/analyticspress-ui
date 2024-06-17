@@ -1,6 +1,6 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import LoginForm from './Loginform';
-import RegisterForm from './Registerform';
+import RegisterForm from './RegisterForm';
 
 const AuthTabs = () => {
   return (
